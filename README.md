@@ -1,5 +1,7 @@
-## Next.js App Router Course - Starter
+The feature I decided to work on was the ability for people to make copies of existing Impact Portfolios for their personal use, which is something I noticed the website didn't have. I thought this might be particularly useful for people who enjoy the ease of donating to previously crafted Impact Portfolios, but are not 100% satisfied with them. Ideally, with this feature, they could clone a portfolio that aligns with their values to add to their own portfolios, and then adjust weights or add/remove non-profits to make their perfect portfolio. 
 
-This is the starter template for the Next.js App Router Course. It contains the starting code for the dashboard application.
+To see this functionality, click on the 'Create Portfolio' button on the front page. On the next page, click on the new button 'Copy Existing Impact Portfolio'. This leads to a new form that uses data fetching to provide the names of Impact Portfolios as selection options. Then select a portfolio of choice and press 'Copy Portfolio'. Though I did not have time to actually implement the copying of the portfolio, this button would use the previously submitted name and the impact portfolio's data to create a new portfolio and add it to the server database. 
 
-For more information, see the [course curriculum](https://nextjs.org/learn) on the Next.js Website.
+I also edited a bit of tutorial code in order to implement a search function so non-profits can look through past history of who donated and how much they donated. This could be useful in gathering user data to help them understand their demographic better.  
+
+This project was my first time working with a full-tech stack, so I spent a lot of time just learning about how to navigate the stack and understanding the syntax of the languages. Though I wasn't able to make the most advanced contraption, I definitely learned a lot and hope to continue learning more about web dev!
