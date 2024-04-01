@@ -9,7 +9,19 @@ const users = [
   },
 ];
 
-const impactPortfolios = [
+const portfolios = [
+  {
+    id: '3958dc9e-712f-4377-85e9-fec4b6a6442a',
+    name: 'My Portfolio',
+    nonprofit1: 'MARINE TECHNOLOGY SOCIETY INC',
+    nonprofit1: 'MARINE TECHNOLOGY SOCIETY INC',
+    nonprofit1: 'MARINE TECHNOLOGY SOCIETY INC',
+    weight1: 34,
+    weight2: 32,
+    weight3: 33,
+  }
+];
+const impactportfolios = [
   {
     id: '3958dc9e-712f-4377-85e9-fec4b6a6442a',
     name: 'The Philanthropia Science & Technology 10',
@@ -19,8 +31,28 @@ const impactPortfolios = [
     weight1: 34,
     weight2: 32,
     weight3: 33,
+  },
+  {
+    id: '3958dc9e-742f-4377-85e9-fec4b6a6442a',
+    name: 'The Philanthropia Health Care 10',
+    nonprofit1: 'WAKE FOREST UNIVERSITY HEALTH SCIENCES',
+    nonprofit2: 'CHILDRENS HOSPITAL MEDICAL CENTER',
+    nonprofit3: 'THE CLEVELAND CLINIC FOUNDATION',
+    weight1: 34,
+    weight2: 32,
+    weight3: 33,
+  },
+  {
+    id: '3958dc9e-737f-4377-85e9-fec4b6a6442a',
+    name: 'The Philanthropia Education 10',
+    nonprofit1: 'PRESIDENT AND FELLOWS OF HARVARD COLLEGE',
+    nonprofit2: 'PERKINS SCHOOL FOR THE BLIND',
+    nonprofit3: 'CORNELL UNIVERSITY',
+    weight1: 34,
+    weight2: 32,
+    weight3: 33,
   }
-]
+];
 const customers = [
   {
     id: '3958dc9e-712f-4377-85e9-fec4b6a6442a',
@@ -194,6 +226,7 @@ const revenue = [
 
 module.exports = {
   users,
+  impactportfolios,
   customers,
   invoices,
   revenue,

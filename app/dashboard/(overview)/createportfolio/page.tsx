@@ -14,10 +14,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
-
+import Form from "@/app/ui/dashboard/create-form";
+import { impactportfolios } from "@/app/lib/placeholder-data";
 
 export default async function Page() {
-  const impactPortfolios =  await fetchImpactPortfolios();
+
+  
     return(
       <div className = "flex h-full flex-col items-center  gap-2">
         <h1 className = {`${lusitana.className}`}>
@@ -25,18 +27,8 @@ export default async function Page() {
         </h1>
         <Input type="string" id="name" placeholder="Portfolio Name" />
         <div className = 'flex gap-2'>
-        <Select>
-          <SelectTrigger className="w-[180px]">
-            <SelectValue placeholder="Theme" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="light">Light</SelectItem>
-            <SelectItem value="dark">Dark</SelectItem>
-            <SelectItem value="system">System</SelectItem>
-          </SelectContent>
-        </Select>
           <Button asChild>
-            <Link href="/login">Copy Existing Impact Portfolio</Link>
+            <Link href="/dashboard/createportfolio/copyexisting">Copy Existing Impact Portfolio</Link>
           </Button>
           <Button asChild>
             <Link href="/login">Add Nonprofits</Link>
@@ -44,6 +36,7 @@ export default async function Page() {
           <Button asChild>
             <Link href="/login">Save</Link>
           </Button>
+          
           </div>
       </div>
     );

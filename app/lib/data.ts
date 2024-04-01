@@ -14,8 +14,9 @@ import { unstable_noStore as noStore } from 'next/cache';
 
 export async function fetchImpactPortfolios(){
   try {
-    const data = await sql<ImpactPortfolio>`SELECT * FROM impactPortfolios`;
-
+    const data = await sql<ImpactPortfolio>`
+    SELECT * FROM impactportfolios
+    `;
     return data.rows;
   } catch (error) {
     console.error('Database Error:', error);
@@ -153,7 +154,27 @@ export async function fetchInvoicesPages(query: string) {
     throw new Error('Failed to fetch total number of invoices.');
   }
 }
-
+export async function fetchImpactbyName(name: string) {
+  noStore()
+  try{
+    const data = await sql<ImpactPortfolio>`
+      SELECT
+        impactportfolios.nonprofit1,
+        impactportfolios.nonprofit2,
+        impactportfolios.nonprofit3,
+        impactportfolios.weights1,
+        impactportfolios.weights2,
+        impactportfolios.weights3
+        FROM impactportfolios
+        WHERE impactportfolios.name = ${name};
+         `;
+         return data.rows;
+  }
+  catch (error) {
+    console.error('Database Error:', error);
+    throw new Error('Failed to fetch invoice.');
+  }
+}
 export async function fetchInvoiceById(id: string) {
   noStore()
   try {

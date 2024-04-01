@@ -5,20 +5,25 @@
 export type Portfolio = {
   id: string;
   name: string;
-  email: string;
-  nonprofits: [string];
-  weights: [number];
-}
+  nonprofit1: string;
+  nonprofit2: string;
+  nonprofit3: string;
+  weight1: number;
+  weight2: number;
+  weight3: number;
+};
+
 export type ImpactPortfolio = {
   id: string;
   name: string;
   nonprofit1: string;
   nonprofit2: string;
   nonprofit3: string;
-  weight1: string;
-  weight2: string;
-  weight3: string;
-}
+  weight1: number;
+  weight2: number;
+  weight3: number;
+};
+
 export type User = {
   id: string;
   name: string;
