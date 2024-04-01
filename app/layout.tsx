@@ -1,4 +1,5 @@
 import '@/app/ui/global.css';
+import SideNav from '@/app/ui/dashboard/sidenav';
 
 export default function RootLayout({
   children,
@@ -6,8 +7,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={'${inter.className} antialiased'}>{children}</body>
-    </html>
+    <div>
+        <SideNav />
+    
+        <body className={'${inter.className} antialiased'}>{children}</body>
+    </div>
   );
 }

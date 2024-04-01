@@ -15,8 +15,8 @@ const links = [
   { name: 'Philanthropia', href: '/dashboard', icon: HomeIcon},
   { name: 'Home', href: '/dashboard', icon: HomeIcon },
   {
-    name: 'Individuals',
-    href: '/dashboard/invoices',
+    name: 'Contributions',
+    href: '/dashboard/donations',
     icon: DocumentDuplicateIcon,
   },
   { name: 'Discover Non-Profits', href: '/dashboard/customers', icon: UserGroupIcon },
