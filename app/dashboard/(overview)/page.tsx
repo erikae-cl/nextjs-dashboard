@@ -8,28 +8,27 @@ import { RevenueChartSkeleton,
           CardsSkeleton 
         } from '@/app/ui/skeletons';
 import CardWrapper from '@/app/ui/dashboard/cards';
+import { Button } from "@/app/ui/button"
+import Link from 'next/link';
+import clsx from 'clsx';
 
 export default async function Page() {
 
   return (
     <main>
-      <h1 className={`${lusitana.className} mb-4 text-xl md:text-2xl`}>
-        Dashboard
-      </h1>
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        <Suspense fallback={<CardsSkeleton />}>
-          <CardWrapper />
-        </Suspense>
+      <div className ={'flex gap-5'}>
+        <h1 className={`${lusitana.className} text-left mb-4 text-xl md:text-2xl mt-4`}>
+          Your Impact Portfolios
+        </h1>
+        <Link
+            key={'Create a Portfolio'}
+            href={'/dashboard/createportfolio'}
+            className="flex h-[50px] w-[142px] grow items-center justify-center gap-2 rounded-md p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3" style={{ border: "1px solid black" }}
+          >
+            <p className="hidden md:block">{'Create a Portfolio'}</p>
+          </Link>
       </div>
-      <div className="mt-6 grid grid-cols-1 gap-6 md:grid-cols-4 lg:grid-cols-8">
-        <Suspense fallback={<RevenueChartSkeleton />}>
-          <RevenueChart />
-        </Suspense>
-
-        <Suspense fallback={<LatestInvoicesSkeleton />}>
-          <LatestInvoices />
-        </Suspense>
-      </div>
+      
     </main>
   );
 }

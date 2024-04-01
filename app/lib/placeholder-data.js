@@ -9,6 +9,18 @@ const users = [
   },
 ];
 
+const impactPortfolios = [
+  {
+    id: '3958dc9e-712f-4377-85e9-fec4b6a6442a',
+    name: 'The Philanthropia Science & Technology 10',
+    nonprofit1: 'AMERICAN VACUUM SOCIETY INCORPORATED',
+    nonprofit2: 'MARINE TECHNOLOGY SOCIETY INC',
+    nonprofit3: 'FSHD SOCIETY',
+    weight1: 34,
+    weight2: 32,
+    weight3: 33,
+  }
+]
 const customers = [
   {
     id: '3958dc9e-712f-4377-85e9-fec4b6a6442a',

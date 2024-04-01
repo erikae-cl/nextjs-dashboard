@@ -4,9 +4,47 @@ const {
   customers,
   revenue,
   users,
+  impactPortfolios
 } = require('../app/lib/placeholder-data.js');
 const bcrypt = require('bcrypt');
 
+async function seedImpactPortfolios(client){
+  try {
+    await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
+    const createTable = await client.sql`
+      CREATE TABLE IF NOT EXISTS impactPortfolios (
+        id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+        name VARCHAR(255) NOT NULL,
+        nonprofit1 VARCHAR(255) NOT NULL,
+        nonprofit2 VARCHAR(255) NOT NULL,
+        nonprofit3 VARCHAR(255) NOT NULL,
+        weight1 INT NOT NULL,
+        weight2 INT NOT NULL,
+        weight3 INT NOT NULL
+      );
+    `;
+    console.log(`Created "impactPortfolios" table`);
+  const insertedImpactPortfolios = await Promise.all(
+    impactPortfolios.map(async (impactPortfolio) => {
+      return client.sql`
+      INSERT INTO impactPortfolios (id, name, nonprofits, weights)
+      VALUES (${impactPortfolio.id}, ${impactPortfolio.name}, ${importPortfolio.nonprofit1}, ${importPortfolio.nonprofit2}, ${importPortfolio.nonprofit3}, ${importPortfolio.weight1}, ${importPortfolio.weight2}, ${importPortfolio.weight3})
+      ON CONFLICT (id) DO NOTHING;
+    `;
+    }),
+  );
+
+  console.log(`Seeded ${insertedImpactPortfolios.length} users`);
+
+  return {
+    createTable,
+    impactPortfolios: insertedImpactPortfolios,
+  };
+} catch (error) {
+  console.error('Error seeding users:', error);
+  throw error;
+}
+}
 async function seedUsers(client) {
   try {
     await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
@@ -162,7 +200,7 @@ async function seedRevenue(client) {
 
 async function main() {
   const client = await db.connect();
-
+  await seedImpactPortfolios(client);
   await seedUsers(client);
   await seedCustomers(client);
   await seedInvoices(client);
